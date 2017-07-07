@@ -24,12 +24,12 @@ class Envato_Extras_Shortcode {
     $atts = shortcode_atts( array(
       'cat' => '',
       'header' => ''
-    ), $atts );
+    ), $atts, 'envato_extras' );
 
     $args = array(
       'post_type'       => 'envato-extras',
       'order'           => 'ASC',
-      'extras-category' => sanitize_title( $atts['cat'] )
+      'extras-category' => sanitize_text_field( $atts['cat'] )
     );
 
     // Custom query.
@@ -41,7 +41,7 @@ class Envato_Extras_Shortcode {
     echo '<div class="envato-extra-container clearfix">';
     echo '<header class="section-header">';
     echo '<h2 class="section-title">';
-    echo sanitize_title( $atts['header'] );
+    echo sanitize_text_field( $atts['header'] );
     echo '</h2>';
     echo '</header>';
 
