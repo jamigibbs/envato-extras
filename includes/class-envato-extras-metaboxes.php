@@ -45,7 +45,7 @@ class Envato_Extras_Metaboxes {
 		$project_creator = ! isset( $meta['project_creator'][0] ) ? '' : $meta['project_creator'][0];
 		$project_url = ! isset( $meta['project_url'][0] ) ? '' : $meta['project_url'][0];
 		$envato_profile = ! isset( $meta['envato_profile'][0] ) ? '' : $meta['envato_profile'][0];
-		$twitter_url = ! isset( $meta['project_twitter'][0] ) ? '' : $meta['project_twitter'][0];
+		$twitter_username = ! isset( $meta['project_twitter'][0] ) ? '' : $meta['project_twitter'][0];
 
 		wp_nonce_field( basename( __FILE__ ), 'extras_fields' ); ?>
 
@@ -83,11 +83,11 @@ class Envato_Extras_Metaboxes {
 
 			<tr>
 				<td class="extras_meta_box_td" colspan="2">
-					<label for="project_twitter"><?php _e( 'Twitter Link', 'envato-extras' ); ?>
+					<label for="project_twitter"><?php _e( 'Twitter Username', 'envato-extras' ); ?>
 					</label>
 				</td>
 				<td colspan="4">
-					<input type="text" name="project_twitter" class="regular-text" placeholder="https://twitter.com/envato" value="<?php echo esc_attr( $twitter_url ); ?>">
+					<input type="text" name="project_twitter" class="regular-text" placeholder="ie. envato" value="<?php echo esc_attr( $twitter_username ); ?>">
 				</td>
 			</tr>
 
@@ -130,7 +130,7 @@ class Envato_Extras_Metaboxes {
 
 		$meta['envato_profile'] = ( isset( $_POST['envato_profile'] ) ? esc_url( $_POST['envato_profile'] ) : '' );
 
-		$meta['project_twitter'] = ( isset( $_POST['project_twitter'] ) ? esc_url( $_POST['project_twitter'] ) : '' );
+		$meta['project_twitter'] = ( isset( $_POST['project_twitter'] ) ? esc_textarea( $_POST['project_twitter'] ) : '' );
 
 		foreach ( $meta as $key => $value ) {
 			update_post_meta( $post->ID, $key, $value );
