@@ -49,6 +49,14 @@ $envato_extras_metaboxes->init();
 $envato_extras_shortcode = new Envato_Extras_Shortcode;
 $envato_extras_shortcode->init();
 
+// Load stylesheet
+function envato_extras_scripts() {
+	$rand = rand( 1, 99999999999 );
+	wp_enqueue_style( 'envato-extras', plugin_dir_url( __FILE__ ) . 'css/style.css', array(), $rand, 'all'  );
+}
+add_action( 'wp_enqueue_scripts', 'envato_extras_scripts' );
+
+
 /**
  * Adds styling to the dashboard for the post type and adds team posts
  * to the "At a Glance" metabox.

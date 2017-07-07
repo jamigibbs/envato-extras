@@ -38,28 +38,46 @@ class Envato_Extras_Shortcode {
     // Check that we have query results.
     if ( $query->have_posts() ) {
 
-    echo '<h3>' . sanitize_title( $atts['header'] ) . '</h3>';
-    echo '<ul class="category posts">';
+    echo '<div class="envato-extra-container clearfix">';
+    echo '<header class="section-header">';
+    echo '<h2 class="section-title">';
+    echo sanitize_title( $atts['header'] );
+    echo '</h2>';
+    echo '</header>';
 
     // Start looping over the query results.
     while ( $query->have_posts() ) {
 
-      $query->the_post(); ?>
+      $query->the_post();
 
-      <li <?php post_class( 'left' ); ?>>
-        <a href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>">
-          <?php the_title(); ?>
-        </a>
-      </li>
+      echo '<div class="envato-extra">'; ?>
+
+        <?php
+          if ( has_post_thumbnail() ){
+            $image = wp_get_attachment_image_src(get_post_thumbnail_id(), 'small'); ?>
+            <div class="post-image" style="background-image: url('<?php echo esc_url( $image[0] ) ?>'); height: 200px;"></div>
+        <?php } ?>
+
+        <header class="entry-title">
+          <a href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>">
+            <?php the_title(); ?>
+          </a>
+        </header>
+
+        <div class="entry-summary">
+          <?php the_content(); ?>
+        </div>
+
+    <?php echo '</div>'; ?>
 
     <?php }
-
-      echo '</ul>';
 
     }
 
     // Restore original post data.
     wp_reset_postdata();
+
+    echo '</div>';
 
   }
 

@@ -1,0 +1,43 @@
+.clearfix::after {
+   content: " ";
+   display: block;
+   height: 0;
+   clear: both;
+}
+
+.envato-extra-single {
+  width: 22.2222222222%;
+  float: left;
+  margin-left: 1.3888888889%;
+  margin-right: 1.3888888889%;
+}
+
+.envato-extra-container {
+  clear: both;
+  display: block;
+}
+
+.envato-extra-container .envato-extra {
+  box-shadow: 0 1px 4px 0 rgba(0,0,0,.1);
+  width: 22.2222222222%;
+  float: left;
+  margin-left: 1.3888888889%;
+  margin-right: 1.3888888889%;
+}
+
+.envato-extra .entry-title {
+  margin: 1em;
+  font-size: 1.25em;
+  line-height: 1.2;
+}
+
+.envato-extra .entry-title a {
+  color: #4a4a4a;
+}
+
+.envato-extra .entry-summary {
+  color: #999;
+  font-size: 14px;
+  margin: 0 1em 1em;
+  overflow: hidden;
+}
