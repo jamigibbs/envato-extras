@@ -39,10 +39,8 @@ class Envato_Extras_Shortcode {
     if ( $query->have_posts() ) {
 
     echo '<div class="envato-extra-container clearfix">';
-    echo '<header class="section-header">';
-    echo '<h2 class="section-title">';
-    echo sanitize_text_field( $atts['header'] );
-    echo '</h2>';
+    echo '<header class="section-header" id="'. sanitize_text_field( $atts['cat'] ) .'">';
+    echo '<h2 class="section-title">' . sanitize_text_field( $atts['header'] ) . '</h2>';
     echo '</header>';
     echo '<div class="display-wrap">';
 
