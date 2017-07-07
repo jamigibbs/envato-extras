@@ -5,7 +5,7 @@ This WordPress plugin enables an Envato Extras post type and shortcode for displ
 ### General TODO
 
 - [x] Style content
-- [ ] Default image
+- [x] Default image
 - [ ] Lazy load images
 - [ ] Single page template
 - [ ] Localize

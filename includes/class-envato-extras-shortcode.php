@@ -53,9 +53,12 @@ class Envato_Extras_Shortcode {
 
         <?php
           if ( has_post_thumbnail() ){
-            $image = wp_get_attachment_image_src(get_post_thumbnail_id(), 'small'); ?>
-            <div class="post-image" style="background-image: url('<?php echo esc_url( $image[0] ) ?>')"></div>
-        <?php } ?>
+            $image = wp_get_attachment_image_src(get_post_thumbnail_id(), 'small');
+          } else {
+            $image = array( plugins_url( 'img/default.png', dirname(__FILE__) ) );
+          } ?>
+
+        <div class="post-image" style="background-image: url('<?php echo esc_url( $image[0] ) ?>')"></div>
 
         <header class="entry-title">
 
