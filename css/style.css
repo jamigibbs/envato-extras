@@ -99,6 +99,21 @@
   width: 15px;
 }
 
+.envato-button {
+  background-color: #6BA229;
+  border: 1px solid #6ba229;
+  border-radius: 3px;
+  color: white;
+  line-height: 1;
+  padding: 15px 50px;
+  font-weight: 500;
+}
+
+.envato-button:hover{
+  background:#78b62e;
+  border: 1px solid #78b62e;
+}
+
 @media only screen and (min-width: 640px) and (max-width: 1023px) {
   .envato-extra-container .envato-extra {
     width: 100%;

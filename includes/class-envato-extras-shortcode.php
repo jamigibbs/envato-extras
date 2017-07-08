@@ -58,17 +58,23 @@ class Envato_Extras_Shortcode {
             $image = array( plugins_url( 'img/default.png', dirname(__FILE__) ) );
           } ?>
 
-        <div class="post-image" style="background-image: url('<?php echo esc_url( $image[0] ) ?>')"></div>
+        <?php if( get_post_meta( $post->ID, 'project_url', true ) ) {
+            $project_url = get_post_meta( $post->ID, 'project_url', true ); ?>
+
+            <a href="<?php echo esc_url( $project_url ) ?>">
+              <div class="post-image" style="background-image: url('<?php echo esc_url( $image[0] ) ?>')"></div>
+            </a>
+
+        <?php } else { ?>
+
+          <div class="post-image" style="background-image: url('<?php echo esc_url( $image[0] ) ?>')"></div>
+          
+        <?php }?>
 
         <header class="entry-title">
-
-          <?php if( get_post_meta( $post->ID, 'project_url', true ) ) {
-            $project_url = get_post_meta( $post->ID, 'project_url', true ); ?>
-            <a href="<?php the_permalink() ?>" title="<?php the_title_attribute(); ?>">
-              <?php the_title(); ?>
-            </a>
-          <?php } ?>
-
+          <a href="<?php the_permalink() ?>" title="<?php the_title_attribute(); ?>">
+            <?php the_title(); ?>
+          </a>
         </header>
 
         <div class="entry-summary">
@@ -83,6 +89,7 @@ class Envato_Extras_Shortcode {
 
               $project_creator = get_post_meta( $post->ID, 'project_creator', true );
               $envato_profile = get_post_meta( $post->ID, 'envato_profile', true );
+
               echo '<li class="creator"><i>by </i><a href=" ' . esc_url( $envato_profile ) . ' ">' . esc_html( $project_creator ) . '</a></li>';
 
             } elseif ( get_post_meta( $post->ID, 'project_creator', true ) ) {
@@ -96,12 +103,8 @@ class Envato_Extras_Shortcode {
 
             <?php if ( get_post_meta( $post->ID, 'project_twitter', true ) ) {
               $twitter_username = get_post_meta( $post->ID, 'project_twitter', true );
-              echo '<li class="social twitter"><a href="https://twitter.com/' . esc_attr( $twitter_username ) . ' "> <img src="'. plugins_url( 'img/twitter.svg', dirname(__FILE__) ) .'" alt="Twitter"></a></li>';
-            } ?>
 
-            <?php if ( get_post_meta( $post->ID, 'envato_profile', true ) ) {
-              $envato_profile = get_post_meta( $post->ID, 'envato_profile', true );
-              echo '<li class="social envato"><a href=" ' . esc_url( $envato_profile ) . ' "> <img src="'. plugins_url( 'img/envato.svg', dirname(__FILE__) ) .'" alt="Envato"> </a></li>';
+              echo '<li class="social twitter"><a href="https://twitter.com/' . esc_attr( $twitter_username ) . ' "> <img src="'. plugins_url( 'img/twitter.svg', dirname(__FILE__) ) .'" alt="Twitter"></a></li>';
             } ?>
 
           </ul>

@@ -21,14 +21,16 @@ class Envato_Extras_Public {
 
     global $post;
 
-    if ($post->post_type == 'envato-extras') {
+    if ( $post->post_type == 'envato-extras' && is_single() ) {
 
       $meta = get_post_meta( get_the_ID() );
 
-      $content .= '<p>' . $meta['project_creator'][0] . '</p>';
-      $content .= '<p>' . $meta['project_url'][0] . '</p>';
-      $content .= '<p>' . $meta['envato_profile'][0] . '</p>';
-      $content .= '<p>' . $meta['project_twitter'][0] . '</p>';
+      if( $meta['envato_profile'][0] ){
+        $content .= '<p><i>Created by <a href="' . $meta['envato_profile'][0] . '">' . $meta['project_creator'][0] . '</a></i></p>';
+      } else {
+        $content .= '<p><i>Created by ' . $meta['project_creator'][0] . '</i></p>';
+      }
+      $content .= '<p><a href="' . $meta['project_url'][0] . '"><button class="envato-button">Go to Project &rarr;</button></a></p>';
     }
 
     return $content;
