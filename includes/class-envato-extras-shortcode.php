@@ -64,7 +64,7 @@ class Envato_Extras_Shortcode {
 
           <?php if( get_post_meta( $post->ID, 'project_url', true ) ) {
             $project_url = get_post_meta( $post->ID, 'project_url', true ); ?>
-            <a href="<?php echo esc_url( $project_url ) ?>" title="<?php the_title_attribute(); ?>">
+            <a href="<?php the_permalink() ?>" title="<?php the_title_attribute(); ?>">
               <?php the_title(); ?>
             </a>
           <?php } ?>

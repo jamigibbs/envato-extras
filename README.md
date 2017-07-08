@@ -6,12 +6,12 @@ This WordPress plugin enables an Envato Extras post type and shortcode for displ
 
 - [x] Style content
 - [x] Default image
-- [ ] Lazy load images
-- [ ] Single page template
+- [ ] Single page content
 - [ ] Localize
 
 ### Features TODO
 
-- [ ] Load more in sections
+- [ ] 'Load more' in sections
+- [ ] Lazy load images
 - [ ] Section navigation
-- [ ] Display author avatar (Envato API)
+- [ ] Display author avatar with Envato API

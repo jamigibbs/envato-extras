@@ -28,6 +28,7 @@ require plugin_dir_path( __FILE__ ) . 'includes/class-envato-extras.php';
 require plugin_dir_path( __FILE__ ) . 'includes/class-envato-extras-registrations.php';
 require plugin_dir_path( __FILE__ ) . 'includes/class-envato-extras-metaboxes.php';
 require plugin_dir_path( __FILE__ ) . 'includes/class-envato-extras-shortcode.php';
+require plugin_dir_path( __FILE__ ) . 'includes/class-envato-extras-public.php';
 
 // Instantiate registration class, so we can add it as a dependency to main plugin class.
 $envato_extras_registrations = new Envato_Extras_Registrations;
