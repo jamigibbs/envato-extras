@@ -66,7 +66,7 @@ class Envato_Extras_Registrations {
 			'capability_type' => 'post',
 			'rewrite'         => array( 'slug' => 'envato-market-extras', ), // Permalinks format
 			'menu_position'   => 100,
-			'menu_icon'       => 'dashicons-lightbulb',
+			'menu_icon'       => 'dashicons-tech-envato',
 		);
 
 		$args = apply_filters( 'extras_post_type_args', $args );

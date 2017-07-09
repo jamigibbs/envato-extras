@@ -35,6 +35,17 @@ class Envato_Extras_Admin {
 		add_action( 'right_now_content_table_end', array( $this, 'add_rightnow_counts' ) );
 		add_action( 'dashboard_glance_items', array( $this, 'add_glance_counts' ) );
 
+		// Admin specific style
+		add_action( 'admin_enqueue_scripts', array( $this, 'load_custom_admin_styles' ) );
+
+	}
+
+	/**
+	 * Add custom admin styles.
+	 *
+	 */
+	public function load_custom_admin_styles() {
+	    wp_enqueue_style( 'envato-extras-admin', plugin_dir_url( __DIR__ ) . 'css/admin.css', false, '0.1.0' );
 	}
 
 	/**
