@@ -2,8 +2,8 @@
 
 This WordPress plugin enables an Envato Extras post type and shortcode for displaying projects created using the Envato API.
 
-### Future TODO
-- [ ] Shortcode to display individual posts
+### TODO
+- [x] Shortcode to display individual posts
 - [ ] Instructions to Readme
 - [ ] Display author avatar with Envato API
 - [ ] Localize
