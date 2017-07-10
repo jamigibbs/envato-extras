@@ -68,7 +68,7 @@ class Envato_Extras_Shortcode {
         <?php } else { ?>
 
           <div class="post-image" style="background-image: url('<?php echo esc_url( $image[0] ) ?>')"></div>
-          
+
         <?php }?>
 
         <header class="entry-title">
@@ -104,7 +104,8 @@ class Envato_Extras_Shortcode {
             <?php if ( get_post_meta( $post->ID, 'project_twitter', true ) ) {
               $twitter_username = get_post_meta( $post->ID, 'project_twitter', true );
 
-              echo '<li class="social twitter"><a href="https://twitter.com/' . esc_attr( $twitter_username ) . ' "> <img src="'. plugins_url( 'img/twitter.svg', dirname(__FILE__) ) .'" alt="Twitter"></a></li>';
+              echo '<li class="social twitter"><a href="https://twitter.com/' . esc_attr( $twitter_username ) . ' "><div class="icon dashicons-tech-twitter"></div></a></li>';
+
             } ?>
 
           </ul>
