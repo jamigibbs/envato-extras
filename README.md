@@ -4,6 +4,7 @@ This WordPress plugin enables an Envato Extras post type and shortcode for displ
 
 ### Future TODO
 - [ ] Shortcode to display individual posts
+- [ ] Instructions to Readme
 - [ ] Display author avatar with Envato API
 - [ ] Localize
 - [ ] 'Load more' in sections
