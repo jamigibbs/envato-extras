@@ -26,6 +26,10 @@ To display individual posts:
 
 `[envato_extras_single header="Featured" post="149, 160, 108"]`
 
+Example display:
+
+![Sample page display](http://envato.d.pr/R6IlTE/NDwFsg75+)
+
 
 ### TODO
 - [ ] Display author avatar with Envato API
