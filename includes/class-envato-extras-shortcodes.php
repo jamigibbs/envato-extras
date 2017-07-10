@@ -17,17 +17,24 @@
 class Envato_Extras_Shortcodes {
 
   public function init() {
-		add_shortcode( 'envato_extras_group', array( $this, 'envato_extras_group' ) );
+		add_shortcode( 'envato_extras_category', array( $this, 'envato_extras_category' ) );
 	}
 
-  public function envato_extras_group( $atts ) {
-
-    global $wp_query, $post;
+  public function envato_extras_category( $atts ) {
 
     $atts = shortcode_atts( array(
       'cat' => '',
       'header' => ''
-    ), $atts, 'envato_extras_group' );
+    ), $atts, 'envato_extras_category' );
+
+    ob_start();
+    $this->shortcode_template( $atts );
+    return ob_get_clean();
+  }
+
+  public function shortcode_template( $atts ){
+
+    global $wp_query, $post;
 
     $args = array(
       'post_type'       => 'envato-extras',

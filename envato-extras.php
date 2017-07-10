@@ -8,7 +8,7 @@
  * @wordpress-plugin
  * Plugin Name: Envato Extras
  * Plugin URI:  https://envato.com/extras
- * Description: This WordPress plugin enables an Envato Extras custom post type and shortcode for displaying projects created using the Envato API.
+ * Description: Enables an Envato Extras custom post type and shortcode for displaying projects created using the Envato API.
  * Version:     0.1.0
  * Author:      Jami Gibbs
  * Author URI:  http://jamigibbs.com
