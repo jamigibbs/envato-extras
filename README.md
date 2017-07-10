@@ -1,12 +1,12 @@
 ### Description
 
-This WordPress plugin enables an Envato Extras post type and shortcode for displaying projects created using the Envato API.
+This WordPress plugin enables an Envato Extras post type and shortcode for easier management of projects created using the Envato API.
 
 ## Using
 
 When activated, an admin menu section called `Envato Extras` will be available. Here you can enter individual Extras for display:
 
-![Image of admin menu](http://envato.d.pr/yQcGnd/QfxgkTgB+ =500x)
+![Image of admin menu](http://envato.d.pr/yQcGnd/QfxgkTgB+)
 
 Select "Add New" to begin adding individuals posts. A number of meta fields are available for each post:
 
