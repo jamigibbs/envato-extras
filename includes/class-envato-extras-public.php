@@ -46,7 +46,9 @@ class Envato_Extras_Public {
 	}
 
   public function envato_extras_scripts() {
+
   	wp_enqueue_style( self::PLUGIN_SLUG, plugin_dir_url( __DIR__ ) . 'css/style.css', array(), self::VERSION, 'all'  );
+
   }
 
   public function single_post_content( $content ) {
