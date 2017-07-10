@@ -17,15 +17,28 @@
 class Envato_Extras_Shortcodes {
 
   public function init() {
-		add_shortcode( 'envato_extras_category', array( $this, 'envato_extras_category' ) );
+		add_shortcode( 'envato_extras_category', array( $this, 'category_shortcode' ) );
+		add_shortcode( 'envato_extras_single', array( $this, 'singles_shortcode' ) );
 	}
 
-  public function envato_extras_category( $atts ) {
+  public function category_shortcode( $atts ) {
 
     $atts = shortcode_atts( array(
-      'cat' => '',
+      'cat'    => '',
       'header' => ''
     ), $atts, 'envato_extras_category' );
+
+    ob_start();
+    $this->shortcode_template( $atts );
+    return ob_get_clean();
+  }
+
+  public function singles_shortcode( $atts ) {
+
+    $atts = shortcode_atts( array(
+      'post'   => '',
+      'header' => ''
+    ), $atts, 'envato_extras_single' );
 
     ob_start();
     $this->shortcode_template( $atts );
@@ -36,11 +49,27 @@ class Envato_Extras_Shortcodes {
 
     global $wp_query, $post;
 
-    $args = array(
-      'post_type'       => 'envato-extras',
-      'order'           => 'ASC',
-      'extras-category' => sanitize_text_field( $atts['cat'] )
-    );
+    if( empty( $atts['post'] )  ) {
+
+      $args = array(
+        'post_type'       => 'envato-extras',
+        'order'           => 'ASC',
+        'extras-category' => sanitize_text_field( $atts['cat'] )
+      );
+
+    } else {
+
+      // Put post id strings into array and sanitize
+      $posts_array = explode(" ", $atts['post'] );
+      $posts_array = array_map( 'esc_attr', $posts_array );
+
+      $args = array(
+        'post_type'       => 'envato-extras',
+        'orderby'         => 'ID',
+        'post__in'        => $posts_array
+      );
+
+    }
 
     // Custom query.
     $query = new WP_Query( $args );
@@ -49,9 +78,19 @@ class Envato_Extras_Shortcodes {
     if ( $query->have_posts() ) {
 
     echo '<div class="envato-extra-container clearfix">';
-    echo '<header class="section-header" id="'. sanitize_text_field( $atts['cat'] ) .'">';
-    echo '<h2 class="section-title">' . sanitize_text_field( $atts['header'] ) . '</h2>';
-    echo '</header>';
+
+    if( isset( $atts['header'] ) ){
+
+      if( isset($atts['cat'] ) ) {
+        echo '<header class="section-header" id="'. sanitize_text_field( $atts['cat'] ) .'">';
+      } else {
+        echo '<header class="section-header" id="'. sanitize_text_field( $atts['header'] ) .'">';
+      }
+
+      echo '<h2 class="section-title">' . sanitize_text_field( $atts['header'] ) . '</h2>';
+      echo '</header>';
+    }
+
     echo '<div class="display-wrap">';
 
     // Start looping over the query results.
