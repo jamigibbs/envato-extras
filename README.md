@@ -8,10 +8,9 @@ This WordPress plugin enables an Envato Extras post type and shortcode for displ
 - [x] Default image
 - [x] Single page content
 - [ ] Shortcode to display individual extra
-- [ ] Display author avatar with Envato API
 
 ### Future TODO
-
+- [ ] Display author avatar with Envato API
 - [ ] Localize
 - [ ] 'Load more' in sections
 - [ ] Section Sorting
