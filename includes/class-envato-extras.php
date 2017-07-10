@@ -6,6 +6,9 @@
  * @license   GPL-2.0+
  */
 
+ // Exit if accessed directly.
+ if ( ! defined( 'ABSPATH' ) ) exit;
+
 /**
  * Registration of CPT and related taxonomies.
  *
@@ -18,21 +21,18 @@ class Envato_Extras {
 	 *
 	 * @since 0.1.0
 	 *
-	 * @var string VERSION Plugin version.
+	 * @var string
 	 */
-	const VERSION = '0.1.0';
+	const VERSION = EE_VERSION;
 
 	/**
-	 * Unique identifier for your plugin.
-	 *
-	 * Use this value (not the variable name) as the text domain when internationalizing strings of text. It should
-	 * match the Text Domain file header in the main plugin file.
+	 * Unique identifier for the plugin.
 	 *
 	 * @since 0.1.0
 	 *
 	 * @var string
 	 */
-	const PLUGIN_SLUG = 'envato-extras';
+	const PLUGIN_SLUG = EE_SLUG;
 
 	protected $registration_handler;
 
@@ -75,8 +75,7 @@ class Envato_Extras {
 	 * @since 0.1.0
 	 */
 	public function load_plugin_textdomain() {
-		$domain = self::PLUGIN_SLUG;
-		load_plugin_textdomain( $domain, FALSE, dirname( dirname( plugin_basename( __FILE__ ) ) ) . '/languages' );
+		load_plugin_textdomain( self::PLUGIN_SLUG, FALSE, dirname( dirname( plugin_basename( __FILE__ ) ) ) . '/languages' );
 	}
 
 }

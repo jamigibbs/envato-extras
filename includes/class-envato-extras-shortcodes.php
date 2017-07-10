@@ -6,25 +6,28 @@
  * @license   GPL-2.0+
  */
 
+ // Exit if accessed directly.
+ if ( ! defined( 'ABSPATH' ) ) exit;
+
 /**
  * Register and Display the Shortcode.
  *
  * @package Envato_Extras
  */
-class Envato_Extras_Shortcode {
+class Envato_Extras_Shortcodes {
 
   public function init() {
-		add_shortcode( 'envato_extras', array( $this, 'extras_shortcode' ) );
+		add_shortcode( 'envato_extras_group', array( $this, 'envato_extras_group' ) );
 	}
 
-  public function extras_shortcode( $atts ) {
+  public function envato_extras_group( $atts ) {
 
     global $wp_query, $post;
 
     $atts = shortcode_atts( array(
       'cat' => '',
       'header' => ''
-    ), $atts, 'envato_extras' );
+    ), $atts, 'envato_extras_group' );
 
     $args = array(
       'post_type'       => 'envato-extras',

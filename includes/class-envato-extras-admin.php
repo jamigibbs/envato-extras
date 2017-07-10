@@ -6,12 +6,33 @@
  * @license   GPL-2.0+
  */
 
+ // Exit if accessed directly.
+ if ( ! defined( 'ABSPATH' ) ) exit;
+
 /**
  * Register post types and taxonomies.
  *
  * @package Envato_Extras
  */
 class Envato_Extras_Admin {
+
+	/**
+	 * Plugin version, used for cache-busting of style and script file references.
+	 *
+	 * @since 0.1.0
+	 *
+	 * @var string
+	 */
+	const VERSION = EE_VERSION;
+
+	/**
+	 * Unique identifier for the plugin.
+	 *
+	 * @since 0.1.0
+	 *
+	 * @var string
+	 */
+	const PLUGIN_SLUG = EE_SLUG;
 
 	protected $registration_handler;
 
@@ -45,7 +66,7 @@ class Envato_Extras_Admin {
 	 *
 	 */
 	public function load_custom_admin_styles() {
-	    wp_enqueue_style( 'envato-extras-admin', plugin_dir_url( __DIR__ ) . 'css/admin.css', false, '0.1.0' );
+	    wp_enqueue_style( self::PLUGIN_SLUG . '-admin', plugin_dir_url( __DIR__ ) . 'css/admin.css', false, self::VERSION );
 	}
 
 	/**

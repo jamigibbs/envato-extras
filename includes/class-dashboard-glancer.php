@@ -9,6 +9,9 @@
  * @license   GPL-2.0+
  */
 
+ // Exit if accessed directly.
+ if ( ! defined( 'ABSPATH' ) ) exit;
+
 /**
  * Easily add items to the At a Glance Dashboard widget in WordPress 3.8+.
  *
@@ -51,7 +54,7 @@ class Dashboard_Glancer {
 	public function add( $post_types, $statuses = 'publish' ) {
 		// If relevant output action hook has already passed, then no point in proceeding.
 		if ( did_action( 'dashboard_glance_items' ) ) {
-			_doing_it_wrong( __CLASS__, __( 'Trying to add At a Glance items to dashboard widget afterhook already fired', 'gamajo-dashboard-glancer' ), '1.0.0' );
+			_doing_it_wrong( __CLASS__, __( 'Trying to add At a Glance items to dashboard widget afterhook already fired', 'envato-extras' ), '1.0.0' );
 			return;
 		}
 

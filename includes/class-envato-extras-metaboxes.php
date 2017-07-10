@@ -6,6 +6,9 @@
  * @license   GPL-2.0+
  */
 
+ // Exit if accessed directly.
+ if ( ! defined( 'ABSPATH' ) ) exit;
+
 /**
  * Register metaboxes.
  *

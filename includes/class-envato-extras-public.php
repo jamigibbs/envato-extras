@@ -6,6 +6,9 @@
  * @license   GPL-2.0+
  */
 
+ // Exit if accessed directly.
+ if ( ! defined( 'ABSPATH' ) ) exit;
+
 /**
  * The public-facing functionality of the plugin.
  *
@@ -13,9 +16,38 @@
  */
 class Envato_Extras_Public {
 
+  /**
+	 * Plugin version, used for cache-busting of style and script file references.
+	 *
+	 * @since 0.1.0
+	 *
+	 * @var string VERSION Plugin version.
+	 */
+	const VERSION = EE_VERSION;
+
+	/**
+	 * Unique identifier for your plugin.
+	 *
+	 * Use this value (not the variable name) as the text domain when internationalizing strings of text. It should
+	 * match the Text Domain file header in the main plugin file.
+	 *
+	 * @since 0.1.0
+	 *
+	 * @var string
+	 */
+	const PLUGIN_SLUG = EE_SLUG;
+
   public function init() {
+
+    add_action( 'wp_enqueue_scripts', array( $this, 'envato_extras_scripts' ) );
+
 		add_filter( 'the_content', array( $this, 'single_post_content' ), 1 );
+
 	}
+
+  public function envato_extras_scripts() {
+  	wp_enqueue_style( self::PLUGIN_SLUG, plugin_dir_url( __DIR__ ) . 'css/style.css', array(), self::VERSION, 'all'  );
+  }
 
   public function single_post_content( $content ) {
 
@@ -30,7 +62,7 @@ class Envato_Extras_Public {
       } else {
         $content .= '<p><i>Created by ' . $meta['project_creator'][0] . '</i></p>';
       }
-      $content .= '<p><a href="' . $meta['project_url'][0] . '"><button class="envato-button">Go to Project &rarr;</button></a></p>';
+      $content .= '<p><a target="_blank" href="' . $meta['project_url'][0] . '"><button class="envato-button">Go to Project &rarr;</button></a></p>';
     }
 
     return $content;
@@ -38,7 +70,3 @@ class Envato_Extras_Public {
   }
 
 }
-
-// Initialize
-$envato_extras_public = new Envato_Extras_Public;
-$envato_extras_public->init();

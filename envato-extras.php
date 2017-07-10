@@ -18,16 +18,24 @@
  * Domain Path: /languages
  */
 
-// If this file is called directly, abort.
-if ( ! defined( 'WPINC' ) ) {
-	die;
+// Exit if accessed directly.
+if ( ! defined( 'ABSPATH' ) ) exit;
+
+// Plugin version.
+if ( !defined( 'EE_VERSION' ) ) {
+	define( 'EE_VERSION', '0.1.0' );
+}
+
+// Plugin handle
+if ( !defined( 'EE_SLUG' ) ) {
+	define( 'EE_SLUG', 'envato-extras' );
 }
 
 // Required files for registering the post type, taxonomies, and shortcode.
 require plugin_dir_path( __FILE__ ) . 'includes/class-envato-extras.php';
 require plugin_dir_path( __FILE__ ) . 'includes/class-envato-extras-registrations.php';
 require plugin_dir_path( __FILE__ ) . 'includes/class-envato-extras-metaboxes.php';
-require plugin_dir_path( __FILE__ ) . 'includes/class-envato-extras-shortcode.php';
+require plugin_dir_path( __FILE__ ) . 'includes/class-envato-extras-shortcodes.php';
 require plugin_dir_path( __FILE__ ) . 'includes/class-envato-extras-public.php';
 
 // Instantiate registration class, so we can add it as a dependency to main plugin class.
@@ -47,16 +55,12 @@ $envato_extras_metaboxes = new Envato_Extras_Metaboxes;
 $envato_extras_metaboxes->init();
 
 // Initialize shortcode
-$envato_extras_shortcode = new Envato_Extras_Shortcode;
-$envato_extras_shortcode->init();
+$envato_extras_shortcodes = new Envato_Extras_Shortcodes;
+$envato_extras_shortcodes->init();
 
-// Load stylesheet
-function envato_extras_scripts() {
-	$rand = rand( 1, 99999999999 );
-	wp_enqueue_style( 'envato-extras', plugin_dir_url( __FILE__ ) . 'css/style.css', array(), $rand, 'all'  );
-}
-add_action( 'wp_enqueue_scripts', 'envato_extras_scripts' );
-
+// Initialize public-facing functionality
+$envato_extras_public = new Envato_Extras_Public;
+$envato_extras_public->init();
 
 /**
  * Adds styling to the dashboard for the post type and adds team posts
