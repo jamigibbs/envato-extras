@@ -84,22 +84,22 @@ class Envato_Extras_Registrations {
 		 */
 		protected function register_taxonomy_category() {
 			$labels = array(
-				'name'                       => __( 'Extras Categories', 'envato-extras' ),
-				'singular_name'              => __( 'Extras Category', 'envato-extras' ),
-				'menu_name'                  => __( 'Extras Categories', 'envato-extras' ),
-				'edit_item'                  => __( 'Edit Extras Category', 'envato-extras' ),
-				'update_item'                => __( 'Update Extras Category', 'envato-extras' ),
-				'add_new_item'               => __( 'Add New Extras Category', 'envato-extras' ),
-				'new_item_name'              => __( 'New Extras Category Name', 'envato-extras' ),
-				'parent_item'                => __( 'Parent Extras Category', 'envato-extras' ),
-				'parent_item_colon'          => __( 'Parent Extras Category:', 'envato-extras' ),
-				'all_items'                  => __( 'All Extras Categories', 'envato-extras' ),
-				'search_items'               => __( 'Search Extras Categories', 'envato-extras' ),
-				'popular_items'              => __( 'Popular Extras Categories', 'envato-extras' ),
-				'separate_items_with_commas' => __( 'Separate extras categories with commas', 'envato-extras' ),
-				'add_or_remove_items'        => __( 'Add or remove extras categories', 'envato-extras' ),
-				'choose_from_most_used'      => __( 'Choose from the most used extras categories', 'envato-extras' ),
-				'not_found'                  => __( 'No extras categories found.', 'envato-extras' ),
+				'name'                       => __( 'Categories', 'envato-extras' ),
+				'singular_name'              => __( 'Category', 'envato-extras' ),
+				'menu_name'                  => __( 'Categories', 'envato-extras' ),
+				'edit_item'                  => __( 'Edit Category', 'envato-extras' ),
+				'update_item'                => __( 'Update Category', 'envato-extras' ),
+				'add_new_item'               => __( 'Add New Category', 'envato-extras' ),
+				'new_item_name'              => __( 'New Category Name', 'envato-extras' ),
+				'parent_item'                => __( 'Parent Category', 'envato-extras' ),
+				'parent_item_colon'          => __( 'Parent Category:', 'envato-extras' ),
+				'all_items'                  => __( 'All Categories', 'envato-extras' ),
+				'search_items'               => __( 'Search Categories', 'envato-extras' ),
+				'popular_items'              => __( 'Popular Categories', 'envato-extras' ),
+				'separate_items_with_commas' => __( 'Separate categories with commas', 'envato-extras' ),
+				'add_or_remove_items'        => __( 'Add or remove categories', 'envato-extras' ),
+				'choose_from_most_used'      => __( 'Choose from the most used categories', 'envato-extras' ),
+				'not_found'                  => __( 'No categories found.', 'envato-extras' ),
 			);
 
 			$args = array(
