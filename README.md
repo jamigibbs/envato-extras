@@ -1,8 +1,16 @@
-### Description
+# Description
 
 This WordPress plugin enables an Envato Extras post type and shortcode for easier management of projects created using the Envato API.
 
-## Using
+# TODO
+- [ ] Display author avatar with Envato API
+- [ ] Localize
+- [ ] 'Load more' in sections
+- [ ] Section Sorting / Navigation
+- [ ] Lazy load images
+- [ ] Section navigation
+
+# Usage
 
 When activated, an admin menu section called `Envato Extras` will be available. Here you can enter individual Extras for display:
 
@@ -30,11 +38,7 @@ Example display:
 
 ![Sample page display](http://envato.d.pr/R6IlTE/NDwFsg75+)
 
+# Changelog
 
-### TODO
-- [ ] Display author avatar with Envato API
-- [ ] Localize
-- [ ] 'Load more' in sections
-- [ ] Section Sorting
-- [ ] Lazy load images
-- [ ] Section navigation
+## [0.1.0] - 2017-07-11
+- Initial release
