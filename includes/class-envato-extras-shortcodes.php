@@ -95,7 +95,7 @@ class Envato_Extras_Shortcodes {
       echo '</header>';
     }
 
-    echo '<div class="display-wrap">';
+    echo '<div class="display-row">';
 
     // Start looping over the query results.
     while ( $query->have_posts() ) {
@@ -114,7 +114,7 @@ class Envato_Extras_Shortcodes {
         <?php if( get_post_meta( $post->ID, 'project_url', true ) ) {
             $project_url = get_post_meta( $post->ID, 'project_url', true ); ?>
 
-            <a href="<?php echo esc_url( $project_url ) ?>">
+            <a target="_blank" href="<?php echo esc_url( $project_url ) ?>">
               <div class="post-image" style="background-image: url('<?php echo esc_url( $image[0] ) ?>')"></div>
             </a>
 
