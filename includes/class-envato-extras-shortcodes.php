@@ -51,14 +51,16 @@ class Envato_Extras_Shortcodes {
 
     wp_enqueue_style( 'envato-extras' );
 
+    // query for category shortcode
     if( empty( $atts['post'] )  ) {
 
       $args = array(
         'post_type'       => 'envato-extras',
-        'order'           => 'ASC',
+        'order'           => 'date',
         'extras-category' => sanitize_text_field( $atts['cat'] )
       );
 
+    // query for single posts shortcode
     } else {
 
       // Put post id strings into array and sanitize
@@ -67,7 +69,7 @@ class Envato_Extras_Shortcodes {
 
       $args = array(
         'post_type'       => 'envato-extras',
-        'orderby'         => 'ID',
+        'orderby'         => 'date',
         'post__in'        => $posts_array
       );
 
