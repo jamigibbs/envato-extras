@@ -66,7 +66,7 @@ class Envato_Extras_Admin {
 	 *
 	 */
 	public function load_custom_admin_styles() {
-    wp_enqueue_style( self::PLUGIN_SLUG . '-admin', plugin_dir_url( __DIR__ ) . 'css/admin.css', false, self::VERSION );
+    wp_enqueue_style( self::PLUGIN_SLUG . '-admin', plugin_dir_url( __DIR__ ) . 'css/admin.css', false, '9999' );
 	}
 
 	/**

@@ -40,5 +40,9 @@ Example display:
 
 # Changelog
 
+
+## [0.1.1] - 2017-07-11
+- Fixing admin area icon
+
 ## [0.1.0] - 2017-07-11
 - Initial release

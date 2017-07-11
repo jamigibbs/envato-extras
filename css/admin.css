@@ -37,10 +37,6 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
-.dashicons-tech-envato:before {
-  content: "\45";
-}
-
-#dashboard-widgets #dashboard_right_now li.envato-extras-count a.dashicons-tech-envato:before {
-  content: "\45";
+.dashicons-tech-envato:before, #dashboard-widgets #dashboard_right_now li.envato-extras-count a.dashicons-tech-envato:before {
+  content: "\63";
 }
