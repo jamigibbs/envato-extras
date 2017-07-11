@@ -6,7 +6,7 @@
  * @license   GPL-2.0+
  *
  * Plugin Name: Envato Extras
- * Plugin URI:  https://envato.com/extras
+ * Plugin URI:  https://github.com/jamigibbs/envato-extras
  * Description: Enables an Envato Extras custom post type and shortcode for displaying projects created using the Envato API.
  * Version:     0.1.0
  * Author:      Jami Gibbs
