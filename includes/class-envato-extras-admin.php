@@ -66,7 +66,7 @@ class Envato_Extras_Admin {
 	 *
 	 */
 	public function load_custom_admin_styles() {
-	    wp_enqueue_style( self::PLUGIN_SLUG . '-admin', plugin_dir_url( __DIR__ ) . 'css/admin.css', false, self::VERSION );
+    wp_enqueue_style( self::PLUGIN_SLUG . '-admin', plugin_dir_url( __DIR__ ) . 'css/admin.css', false, self::VERSION );
 	}
 
 	/**
@@ -187,7 +187,7 @@ class Envato_Extras_Admin {
 	 * @since 0.1.0
 	 */
 	public function add_glance_counts() {
-		$glancer = new Dashboard_Glancer;
+		$glancer = new Envato_Extras_Dashboard_Glancer;
 		$glancer->add( $this->registration_handler->post_type, array( 'publish', 'pending' ) );
 	}
 

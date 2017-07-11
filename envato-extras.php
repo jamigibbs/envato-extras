@@ -68,8 +68,8 @@ $envato_extras_public->init();
 if ( is_admin() ) {
 
 	// Loads for users viewing the WordPress dashboard
-	if ( ! class_exists( 'Dashboard_Glancer' ) ) {
-		require plugin_dir_path( __FILE__ ) . 'includes/class-dashboard-glancer.php';  // WP 3.8
+	if ( ! class_exists( 'Envato_Extras_Dashboard_Glancer' ) ) {
+		require plugin_dir_path( __FILE__ ) . 'includes/class-envato-extras-dashboard-glancer.php';  // WP 3.8
 	}
 
 	require plugin_dir_path( __FILE__ ) . 'includes/class-envato-extras-admin.php';

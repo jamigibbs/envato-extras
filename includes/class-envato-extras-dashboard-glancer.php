@@ -12,13 +12,7 @@
  // Exit if accessed directly.
  if ( ! defined( 'ABSPATH' ) ) exit;
 
-/**
- * Easily add items to the At a Glance Dashboard widget in WordPress 3.8+.
- *
- * @package Dashboard_Glancer
- * @author  Gary Jones
- */
-class Dashboard_Glancer {
+class Envato_Extras_Dashboard_Glancer {
 
 	/**
 	 * Hold all of the items to show.
@@ -187,7 +181,7 @@ class Dashboard_Glancer {
 	 */
 	protected function maybe_link( $text, $href ) {
 		if ( current_user_can( 'edit_posts' ) ) {
-			return '<a href="' . esc_url( $href ) . '">' . $text . '</a>';
+			return '<a class="dashicons-tech-envato" href="' . esc_url( $href ) . '">' . $text . '</a>';
 		}
 		return $text;
 	}
