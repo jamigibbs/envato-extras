@@ -49,6 +49,8 @@ class Envato_Extras_Shortcodes {
 
     global $wp_query, $post;
 
+    wp_enqueue_style( 'envato-extras' );
+
     if( empty( $atts['post'] )  ) {
 
       $args = array(
