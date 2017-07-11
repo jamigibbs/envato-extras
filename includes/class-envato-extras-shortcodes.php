@@ -111,18 +111,7 @@ class Envato_Extras_Shortcodes {
             $image = array( plugins_url( 'img/default.png', dirname(__FILE__) ) );
           } ?>
 
-        <?php if( get_post_meta( $post->ID, 'project_url', true ) ) {
-            $project_url = get_post_meta( $post->ID, 'project_url', true ); ?>
-
-            <a target="_blank" href="<?php echo esc_url( $project_url ) ?>">
-              <div class="post-image" style="background-image: url('<?php echo esc_url( $image[0] ) ?>')"></div>
-            </a>
-
-        <?php } else { ?>
-
           <div class="post-image" style="background-image: url('<?php echo esc_url( $image[0] ) ?>')"></div>
-
-        <?php }?>
 
         <header class="entry-title">
           <a href="<?php the_permalink() ?>" title="<?php the_title_attribute(); ?>">
@@ -158,6 +147,14 @@ class Envato_Extras_Shortcodes {
               $twitter_username = get_post_meta( $post->ID, 'project_twitter', true );
 
               echo '<li class="social twitter"><a href="https://twitter.com/' . esc_attr( $twitter_username ) . ' "><div class="icon dashicons-tech-twitter"></div></a></li>';
+
+            } ?>
+
+            <?php if ( get_post_meta( $post->ID, 'project_url', true ) ) {
+              $project_url = get_post_meta( $post->ID, 'project_url', true );
+
+              echo '<li class="social link"><a href="' . esc_url( $project_url ) . ' "><div class="icon dashicons-tech-link"></div></a></li>';
+
 
             } ?>
 
