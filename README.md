@@ -36,7 +36,7 @@ To display individual posts:
 
 Example display:
 
-![Sample page display](http://envato.d.pr/R6IlTE/NDwFsg75+)
+![Sample page display](http://envato.d.pr/VRsi5t/4TIzt7RX+)
 
 # Changelog
 
