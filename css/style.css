@@ -106,6 +106,10 @@
   text-decoration: underline;
 }
 
+.envato-extra .entry-summary, .envato-extra .meta-fields ul {
+  text-align: left;
+}
+
 .envato-extra .entry-summary {
   color: #999;
   font-size: 14px;
