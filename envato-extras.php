@@ -8,7 +8,7 @@
  * Plugin Name: Envato Extras
  * Plugin URI:  https://github.com/jamigibbs/envato-extras
  * Description: Enables an Envato Extras custom post type and shortcode for displaying projects created using the Envato API.
- * Version:     0.1.1
+ * Version:     0.1.2
  * Author:      Jami Gibbs
  * Author URI:  http://jamigibbs.com
  * Text Domain: envato-extras
@@ -22,7 +22,7 @@ if ( ! defined( 'ABSPATH' ) ) exit;
 
 // Plugin version.
 if ( !defined( 'EE_VERSION' ) ) {
-	define( 'EE_VERSION', '0.1.1' );
+	define( 'EE_VERSION', '0.1.2' );
 }
 
 // Plugin handle
