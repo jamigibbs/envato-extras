@@ -114,9 +114,20 @@ class Envato_Extras_Shortcodes {
           <div class="post-image" style="background-image: url('<?php echo esc_url( $image[0] ) ?>')"></div>
 
         <header class="entry-title">
-          <a href="<?php the_permalink() ?>" title="<?php the_title_attribute(); ?>">
-            <?php the_title(); ?>
-          </a>
+          <?php if ( get_post_meta( $post->ID, 'project_url', true ) ) {
+            $project_url = get_post_meta( $post->ID, 'project_url', true ); ?>
+
+            <a target="_blank" href="<?php echo esc_url( $project_url ) ?>" title="<?php the_title_attribute(); ?>">
+              <?php the_title(); ?>
+            </a>
+
+          <?php  } else { ?>
+
+            <a href="<?php the_permalink() ?>" title="<?php the_title_attribute(); ?>">
+              <?php the_title(); ?>
+            </a>
+            
+          <?php } ?>
         </header>
 
         <div class="entry-summary">
