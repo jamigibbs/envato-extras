@@ -40,6 +40,9 @@ Example display:
 
 # Changelog
 
+## [0.1.3] - 2017-07-12
+- Removes the "New Page Link" plugin filter.
+
 ## [0.1.2] - 2017-07-12
 - The post title now links to the external project instead of internal post
 - Filter 'envato-market-extras' page so that links don't open in a new page.

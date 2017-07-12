@@ -48,18 +48,20 @@ class Envato_Extras_Public {
   }
 
   /**
-   * Adds target=_self to all links on the pages named 'envato-market-extras'.
+   * Adds target=_self to all links on the pages named 'envato-market-extras'
+   * and removes the "New Page Link" plugin filter.
    *
    * This was added specifically for the envato.com site because of a plugin
    * conflict.
    *
-   * @since 0.1.2
+   * @since 0.1.3
    */
   public function page_content( $content ){
 
     global $post;
 
     if( is_page( 'envato-market-extras' ) ){
+      remove_filter( 'the_content', 'npl_autoblank' );
       $content = str_replace('<a', '<a target="_self"', $content);
     }
 
