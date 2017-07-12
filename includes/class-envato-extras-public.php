@@ -40,12 +40,38 @@ class Envato_Extras_Public {
   public function init() {
     add_action( 'wp_enqueue_scripts', array( $this, 'envato_extras_scripts' ) );
 		add_filter( 'the_content', array( $this, 'single_post_content' ), 1 );
+    add_filter( 'the_content', array( $this, 'page_content' ), 1 );
 	}
 
   public function envato_extras_scripts() {
   	wp_register_style( self::PLUGIN_SLUG, plugin_dir_url( __DIR__ ) . 'css/style.css', array(), self::VERSION, 'all'  );
   }
 
+  /**
+	 * Adds target=_self to all links on the pages named 'envato-market-extras'.
+	 *
+   * This was added specifically for the envato.com site because of a plugin
+   * conflict.
+   *
+	 * @since 0.1.2
+	 */
+  public function page_content( $content ){
+
+    global $post;
+
+    if( is_page( 'envato-market-extras' ) ){
+      $content = str_replace('<a', '<a target="_self"', $content);
+    }
+
+    return $content;
+
+  }
+
+  /**
+	 * Add the custom post's meta to the single page content
+	 *
+	 * @since 0.1.0
+	 */
   public function single_post_content( $content ) {
 
     global $post;
